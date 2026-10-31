@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "notion",
+  "name": "Notion",
+  "summary": {
+    "en-US": "Search, read, and write the pages and databases of your Notion workspace.",
+    "es-AR": "Buscá, leé y escribí páginas y bases de datos de tu Notion.",
+    "pt-BR": "Pesquise, leia e escreva páginas e bancos de dados do seu Notion."
+  },
+  "publisher": "Notion Labs",
+  "server_url": "https://mcp.notion.com/mcp",
+  "connection": "operator",
+  "auth": "oauth",
+  "docs_url": "https://developers.notion.com/docs/mcp",
+  "listed": true,
+  "tools": {
+    "notion-search": {
+      "read_only": true
+    },
+    "notion-fetch": {
+      "read_only": true
+    },
+    "notion-get-self": {
+      "read_only": true
+    },
+    "notion-get-users": {
+      "read_only": true
+    },
+    "notion-get-teams": {
+      "read_only": true
+    },
+    "notion-get-comments": {
+      "read_only": true
+    },
+    "notion-list-recent-pages": {
+      "read_only": true
+    },
+    "notion-list-shared-pages": {
+      "read_only": true
+    },
+    "notion-list-favorite-pages": {
+      "read_only": true
+    },
+    "notion-query-data-sources": {
+      "read_only": true
+    },
+    "notion-query-meeting-notes": {
+      "read_only": true
+    },
+    "notion-calendar-list-events": {
+      "read_only": true
+    },
+    "notion-calendar-list-calendars": {
+      "read_only": true
+    },
+    "notion-create-pages": {
+      "read_only": false
+    },
+    "notion-update-page": {
+      "read_only": false
+    },
+    "notion-create-comment": {
+      "read_only": false
+    },
+    "notion-move-pages": {
+      "read_only": false
+    },
+    "notion-duplicate-page": {
+      "read_only": false
+    },
+    "notion-create-database": {
+      "read_only": false
+    },
+    "notion-calendar-create-events": {
+      "read_only": false
+    }
+  }
+}

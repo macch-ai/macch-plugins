@@ -1,0 +1,23 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "acme-work-orders",
+  "name": "Acme Work Orders",
+  "summary": {
+    "en-US": "Check field work orders and leave notes for technicians.",
+    "es-AR": "Consultá órdenes de trabajo y dejá notas para los técnicos.",
+    "pt-BR": "Consulte ordens de serviço e deixe notas para os técnicos."
+  },
+  "publisher": "Acme",
+  "server_url": "https://mcp.acme.example/mcp",
+  "connection": "company",
+  "auth": "api_key",
+  "docs_url": "https://acme.example/docs/macch",
+  "tools": {
+    "find_work_orders": {
+      "read_only": true
+    },
+    "add_work_order_note": {
+      "read_only": false
+    }
+  }
+}

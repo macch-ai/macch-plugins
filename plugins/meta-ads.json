@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "meta-ads",
+  "name": "Meta Ads",
+  "summary": {
+    "en-US": "Read and manage the company's Meta (Facebook and Instagram) ads.",
+    "es-AR": "Consultá y gestioná los anuncios de Meta (Facebook e Instagram) de la empresa.",
+    "pt-BR": "Consulte e gerencie os anúncios da Meta (Facebook e Instagram) da empresa."
+  },
+  "publisher": "Meta",
+  "server_url": "https://mcp.facebook.com/ads",
+  "connection": "company",
+  "auth": "oauth",
+  "oauth": {
+    "scopes": "ads_mcp_management ads_read"
+  },
+  "docs_url": "https://developers.facebook.com/documentation/mcp",
+  "listed": false,
+  "tools": {}
+}

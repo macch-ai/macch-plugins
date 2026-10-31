@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "title": "Macch plugin manifest",
+  "description": "One remote MCP server that operators can connect to Macch's agent from the Marketplace.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "name",
+    "summary",
+    "publisher",
+    "server_url",
+    "connection",
+    "auth"
+  ],
+  "properties": {
+    "$schema": {
+      "description": "Link to this schema, for editor validation.",
+      "type": "string"
+    },
+    "slug": {
+      "description": "Unique plugin id. Lowercase words joined by hyphens; must equal the file name. The agent sees each tool as <slug>_<tool>.",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40,
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "not": {
+        "enum": [
+          "tickets",
+          "customers",
+          "hub",
+          "memory",
+          "tool"
+        ]
+      }
+    },
+    "name": {
+      "description": "Display name shown in the Marketplace.",
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "description": "One short sentence per locale saying what operators can do with the plugin. en-US is required; es-AR and pt-BR are strongly recommended.",
+      "type": "object",
+      "required": [
+        "en-US"
+      ],
+      "properties": {
+        "en-US": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "propertyNames": {
+        "pattern": "^[a-z]{2}-[A-Z]{2}$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "publisher": {
+      "description": "Who builds and runs the MCP server.",
+      "type": "string",
+      "minLength": 1
+    },
+    "server_url": {
+      "description": "Public https URL of the Streamable HTTP MCP endpoint.",
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://[^/?#\\s]+"
+    },
+    "connection": {
+      "description": "operator: each operator signs in with their own account. company: an admin connects one shared account.",
+      "enum": [
+        "operator",
+        "company"
+      ]
+    },
+    "auth": {
+      "description": "oauth: MCP authorization spec. api_key: sent as Authorization: Bearer <key>. none: no credentials.",
+      "enum": [
+        "oauth",
+        "api_key",
+        "none"
+      ]
+    },
+    "oauth": {
+      "description": "OAuth settings, for auth oauth.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "scopes": {
+          "description": "Space-separated scopes to request.",
+          "type": "string"
+        }
+      }
+    },
+    "docs_url": {
+      "description": "Public https page that documents the MCP server.",
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://[^/?#\\s]+"
+    },
+    "listed": {
+      "description": "Whether the Marketplace shows the plugin. Macch sets false to hide it.",
+      "type": "boolean",
+      "default": true
+    },
+    "review": {
+      "description": "Review number. Macch raises it when it re-reviews a tool whose read_only flag did not change.",
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "tools": {
+      "description": "The MCP tools the agent may use, by tool name. Tools missing here are never shown to the agent.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "read_only"
+        ],
+        "properties": {
+          "read_only": {
+            "description": "true: the agent runs the tool without asking the operator (Macch verifies it only reads). false: the operator approves each call.",
+            "type": "boolean"
+          }
+        }
+      },
+      "propertyNames": {
+        "pattern": "^[a-z0-9_-]+$"
+      }
+    }
+  }
+}

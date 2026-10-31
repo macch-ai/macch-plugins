@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "mercadopago",
+  "name": "Mercado Pago",
+  "summary": {
+    "en-US": "Ask Mercado Pago about payments, checkout, and its documentation.",
+    "es-AR": "Consultá a Mercado Pago sobre pagos, cobros y su documentación.",
+    "pt-BR": "Pergunte ao Mercado Pago sobre pagamentos, cobranças e sua documentação."
+  },
+  "publisher": "Mercado Pago",
+  "server_url": "https://mcp.mercadopago.com/mcp",
+  "connection": "company",
+  "auth": "api_key",
+  "docs_url": "https://www.mercadopago.com.ar/developers/en/docs/mcp-server/overview",
+  "listed": true,
+  "tools": {
+    "search_documentation": {
+      "read_only": true
+    }
+  }
+}

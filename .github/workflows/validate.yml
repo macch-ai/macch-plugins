@@ -1,0 +1,49 @@
+name: Validate plugins
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run validate
+      - run: npm test
+
+  python-template:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: templates/python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run pytest
+
+  typescript-template:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: templates/typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: templates/typescript/package-lock.json
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
