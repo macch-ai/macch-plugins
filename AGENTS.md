@@ -40,7 +40,18 @@ One file per plugin: `plugins/<slug>.json`. Macch Core enforces these rules. [`s
   "tools": {
     "find_invoices": { "read_only": true },
     "record_payment": { "read_only": false }
-  }
+  },
+  "suggestions": [
+    {
+      "id": "unpaid-invoices",
+      "icon": "wallet",
+      "text": {
+        "en-US": "Which invoices are unpaid?",
+        "es-AR": "¿Qué facturas están impagas?",
+        "pt-BR": "Quais faturas estão em aberto?"
+      }
+    }
+  ]
 }
 ```
 
@@ -62,6 +73,10 @@ Optional fields:
   - Only tools listed here are ever shown to the agent. A tool your server exposes but the manifest omits stays hidden.
   - `read_only: true` lets the agent run the tool without asking the operator. Macch verifies the claim in review.
   - Every other listed tool asks the operator before each run.
+- `suggestions`: up to three first questions the agent offers in an empty chat once an operator can use the plugin, so operators discover what it does. Each has:
+  - `id`: lowercase words joined by hyphens, unique within the manifest.
+  - `icon`: `clipboard-list`, `lightbulb`, `message-circle-more`, `plug-zap`, `send`, `sparkles`, or `wallet`.
+  - `text`: the question keyed by locale. `en-US` is required; add `es-AR` and `pt-BR`. Write what an operator would type, under about 30 characters, with no sample customer data.
 - `listed`: boolean, default `true`. Macch sets `false` to hide a plugin. Do not set it.
 - `review`: positive integer, default `1`. Macch raises it when it re-reviews a tool whose `read_only` flag did not change. Do not set it.
 
@@ -111,7 +126,7 @@ No other top-level keys are allowed besides `$schema`.
 - [ ] Each `read_only` value matches the tool's `readOnlyHint` and its real behavior.
 - [ ] For `oauth`, the full sign-in completes against the deployed server, and metadata passes the rules in [Auth](#auth).
 - [ ] No result or error contains a secret.
-- [ ] `summary` has `en-US`, `es-AR`, and `pt-BR`.
+- [ ] `summary` and every `suggestions` text have `en-US`, `es-AR`, and `pt-BR`.
 
 ## Pull request
 

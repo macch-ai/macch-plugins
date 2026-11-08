@@ -23,6 +23,7 @@ Runbook. The full contract is in [`AGENTS.md`](../../AGENTS.md). Read it before 
    - `slug` matches the file name, uses lowercase words joined by hyphens, has at most 40 characters, and is not `tickets`, `customers`, `hub`, `memory`, or `tool`.
    - Required: `slug`, `name`, `summary` (`en-US` plus `es-AR` and `pt-BR`), `publisher`, `server_url`, `connection`, `auth`.
    - List every tool under `tools` with `read_only` matching its `readOnlyHint`. Unlisted tools stay hidden.
+   - Add up to three `suggestions`: first questions an operator would type to use the tools, each with an `id`, an `icon` from the schema, and `text` in `en-US`, `es-AR`, and `pt-BR`.
    - Do not set `listed` or `review`. No other keys.
 7. **Validate.** Run `npm install && npm run validate && npm test` at the repo root.
 8. **Open the PR.** Change only that one file. Fill in the PR template with one line per tool justifying `read_only`. Explain how Macch can test. Never include credentials.

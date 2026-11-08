@@ -17,5 +17,16 @@
     "search_documentation": {
       "read_only": true
     }
-  }
+  },
+  "suggestions": [
+    {
+      "id": "get-paid",
+      "icon": "wallet",
+      "text": {
+        "en-US": "How do I get paid with Mercado Pago?",
+        "es-AR": "¿Cómo cobro con Mercado Pago?",
+        "pt-BR": "Como recebo com o Mercado Pago?"
+      }
+    }
+  ]
 }

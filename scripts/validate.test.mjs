@@ -184,3 +184,48 @@ test("a reserved slug gets one clear error", () => {
     'slug: "tickets" is reserved for Macch\'s own tools; pick another',
   ]);
 });
+
+/** A first question that passes every rule. */
+function suggestion(overrides = {}) {
+  return {
+    id: "find-contact",
+    icon: "clipboard-list",
+    text: {
+      "en-US": "Find a contact",
+      "es-AR": "Buscá un contacto",
+      "pt-BR": "Busque um contato",
+    },
+    ...overrides,
+  };
+}
+
+test("up to three suggestions are accepted", () => {
+  const manifest = validManifest({
+    suggestions: [suggestion(), suggestion({ id: "add-note" }), suggestion({ id: "list-deals" })],
+  });
+  assert.deepEqual(validateManifest(manifest, "acme-crm.json"), { errors: [], warnings: [] });
+});
+
+test("suggestions are capped at three and need an id, a known icon, and en-US text", () => {
+  const four = ["a", "b", "c", "d"].map((id) => suggestion({ id }));
+  assertRejected(validManifest({ suggestions: four }), "suggestions");
+  assertRejected(validManifest({ suggestions: [suggestion({ id: "Find Contact" })] }), "suggestions.0.id: use lowercase");
+  assertRejected(validManifest({ suggestions: [suggestion({ icon: "rocket" })] }), "suggestions.0.icon");
+  assertRejected(
+    validManifest({ suggestions: [suggestion({ text: { "es-AR": "Buscá un contacto" } })] }),
+    "suggestions.0.text",
+  );
+});
+
+test("suggestion ids are unique within a manifest", () => {
+  assertRejected(validManifest({ suggestions: [suggestion(), suggestion()] }), "used twice");
+});
+
+test("a suggestion missing es-AR or pt-BR is a warning, not an error", () => {
+  const manifest = validManifest({
+    suggestions: [suggestion({ text: { "en-US": "Find a contact" } })],
+  });
+  const { errors, warnings } = validateManifest(manifest, "acme-crm.json");
+  assert.deepEqual(errors, []);
+  assert.equal(warnings.length, 2);
+});
