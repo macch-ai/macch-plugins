@@ -46,6 +46,9 @@ function describeSchemaError(error) {
       if (field === "slug") {
         return 'slug: use lowercase letters and digits joined by single hyphens, like "my-plugin"';
       }
+      if (/^suggestions\.\d+\.id$/.test(field)) {
+        return `${field}: use lowercase letters and digits joined by single hyphens, like "find-invoice"`;
+      }
       if (field === "server_url" || field === "docs_url") {
         return `${field}: must be an https URL`;
       }
@@ -104,6 +107,24 @@ export function validateManifest(data, filename) {
     for (const locale of RECOMMENDED_LOCALES) {
       if (!data.summary[locale]) {
         warnings.push(`summary: add a "${locale}" translation; most Macch operators read it`);
+      }
+    }
+  }
+  if (Array.isArray(data.suggestions)) {
+    const seen = new Set();
+    for (const suggestion of data.suggestions) {
+      if (!suggestion || typeof suggestion !== "object") continue;
+      // Macch prefixes each id with the slug, so ids only need to be unique here.
+      if (seen.has(suggestion.id)) {
+        errors.push(`suggestions: "${suggestion.id}" is used twice; give each question its own id`);
+      }
+      seen.add(suggestion.id);
+      for (const locale of RECOMMENDED_LOCALES) {
+        if (suggestion.text && typeof suggestion.text === "object" && !suggestion.text[locale]) {
+          warnings.push(
+            `suggestions: add a "${locale}" text to "${suggestion.id}"; most Macch operators read it`,
+          );
+        }
       }
     }
   }

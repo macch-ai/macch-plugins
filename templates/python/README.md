@@ -61,7 +61,8 @@ Store `PLUGIN_API_KEY` in the platform's secret manager. Macch only connects to 
 2. Set `slug`, `name`, `publisher`, `summary` (`en-US` required; add `es-AR` and `pt-BR`), and `server_url` (your `https://.../mcp` endpoint).
 3. Set `connection`: `company` for one shared account an admin connects, or `operator` for one sign-in per operator.
 4. List every tool under `tools`. Mark `read_only: true` only for tools that never change data: Macch runs those without asking the operator and verifies the flag in review. Unlisted tools are never shown to the agent.
-5. Open a pull request against macch-ai/macch-plugins. Macch reviews each tool before listing it.
+5. Optionally add up to three `suggestions`: questions an operator would type to use your tools, with `en-US`, `es-AR`, and `pt-BR` texts. Macch shows them in an empty chat.
+6. Open a pull request against macch-ai/macch-plugins. Macch reviews each tool before listing it.
 
 Once listed, keep tool names, descriptions, input schemas, annotations, and `_meta` stable. A changed tool is hidden from the agent until Macch reviews it again.
 

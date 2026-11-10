@@ -113,7 +113,18 @@ The file name must equal `slug`. For this template:
   "tools": {
     "search_work_orders": { "read_only": true },
     "add_work_order_note": { "read_only": false }
-  }
+  },
+  "suggestions": [
+    {
+      "id": "open-work-orders",
+      "icon": "clipboard-list",
+      "text": {
+        "en-US": "Which work orders are open?",
+        "es-AR": "¿Qué órdenes de trabajo están abiertas?",
+        "pt-BR": "Quais ordens de serviço estão abertas?"
+      }
+    }
+  ]
 }
 ```
 
@@ -121,6 +132,7 @@ The file name must equal `slug`. For this template:
   when each operator signs in with their own account.
 - `tools`: only tools listed here reach the agent. `read_only: true` lets the agent
   run the tool without asking the operator.
+- `suggestions`: up to three first questions operators can send in one click once they can use the plugin.
 - The agent sees tool names as `<slug>_<tool>`, for example `example-workorders_search_work_orders`.
 
 A private plugin for your own company needs no pull request: add the server URL in Macch Admin.

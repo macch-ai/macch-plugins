@@ -74,5 +74,16 @@
     "notion-calendar-create-events": {
       "read_only": false
     }
-  }
+  },
+  "suggestions": [
+    {
+      "id": "find-page",
+      "icon": "clipboard-list",
+      "text": {
+        "en-US": "Find a page in Notion",
+        "es-AR": "Buscá una página en Notion",
+        "pt-BR": "Busque uma página no Notion"
+      }
+    }
+  ]
 }

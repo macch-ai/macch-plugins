@@ -133,6 +133,61 @@
       "propertyNames": {
         "pattern": "^[a-z0-9_-]+$"
       }
+    },
+    "suggestions": {
+      "description": "Up to three first questions the plugin brings to an empty chat with the agent, shown once an operator can use the plugin. Each is a short question or request an operator would type, with no sample customer data.",
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "icon",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "description": "Stable id, unique within the manifest. Lowercase words joined by hyphens.",
+            "type": "string",
+            "maxLength": 40,
+            "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          },
+          "icon": {
+            "description": "Icon Macch Admin shows next to the question. The list matches the icons Macch Admin ships; Macch adds names here when it adds icons.",
+            "enum": [
+              "chart-line",
+              "clipboard-list",
+              "lightbulb",
+              "message-circle-more",
+              "plug-zap",
+              "send",
+              "sparkles",
+              "wallet"
+            ]
+          },
+          "text": {
+            "description": "The question per locale, under about 30 characters. en-US is required; es-AR and pt-BR are strongly recommended.",
+            "type": "object",
+            "required": [
+              "en-US"
+            ],
+            "properties": {
+              "en-US": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "propertyNames": {
+              "pattern": "^[a-z]{2}-[A-Z]{2}$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
     }
   }
 }

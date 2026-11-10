@@ -39,6 +39,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | `oauth` | no | `{ "scopes": "space separated scopes" }`. |
 | `docs_url` | no | `https` link to your docs. |
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Only listed tools reach the agent. |
+| `suggestions` | no | Up to three first questions shown in an empty chat once an operator can use the plugin. |
 | `listed` | no | Set by Macch. Default `true`. |
 | `review` | no | Set by Macch. Default `1`. |
 

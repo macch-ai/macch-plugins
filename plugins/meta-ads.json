@@ -16,5 +16,16 @@
   },
   "docs_url": "https://developers.facebook.com/documentation/mcp",
   "listed": false,
-  "tools": {}
+  "tools": {},
+  "suggestions": [
+    {
+      "id": "campaign-results",
+      "icon": "sparkles",
+      "text": {
+        "en-US": "How are my Meta ads doing?",
+        "es-AR": "¿Cómo van mis anuncios de Meta?",
+        "pt-BR": "Como estão meus anúncios da Meta?"
+      }
+    }
+  ]
 }

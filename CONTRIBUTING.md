@@ -14,7 +14,7 @@ CI runs the same checks. A PR with failing checks is not reviewed.
 
 ## What Macch checks
 
-- **Manifest.** It passes the schema. `slug` equals the file name. The summary is short, describes user value, and has `en-US`, `es-AR`, and `pt-BR`.
+- **Manifest.** It passes the schema. `slug` equals the file name. The summary is short, describes user value, and has `en-US`, `es-AR`, and `pt-BR`. Suggestions, if any, are questions an operator would really ask and match the plugin's tools.
 - **Reachability.** `server_url` serves MCP over Streamable HTTP on public `https`.
 - **Every tool.** Macch calls `tools/list` and reads each listed tool's description, input schema, annotations, and `_meta`.
   - The description is clear to a model and matches what the tool does.
