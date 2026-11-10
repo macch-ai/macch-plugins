@@ -103,6 +103,27 @@
       "format": "uri",
       "pattern": "^https://[^/?#\\s]+"
     },
+    "icon": {
+      "description": "Brand mark shown on the plugin's Marketplace card: one SVG path drawn on a 24x24 viewBox, like the marks on simpleicons.org. Without it, the card shows the name's first letter.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path"
+      ],
+      "properties": {
+        "path": {
+          "description": "The d attribute of one SVG <path> on a 24x24 viewBox: path commands and numbers only.",
+          "type": "string",
+          "maxLength": 8000,
+          "pattern": "^[Mm][MmZzLlHhVvCcSsQqTtAaEe0-9.,+\\-\\s]*$"
+        },
+        "color": {
+          "description": "Brand color as #RRGGBB. Omit it for a black mark, so the icon follows Macch Admin's light or dark theme.",
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      }
+    },
     "listed": {
       "description": "Whether the Marketplace shows the plugin. Macch sets false to hide it.",
       "type": "boolean",

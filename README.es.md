@@ -40,6 +40,7 @@ Para usar un servidor solo dentro de tu empresa, un administrador pega su URL MC
 | `auth` | sí | `oauth`, `api_key` o `none`. |
 | `oauth` | no | `{ "scopes": "space separated scopes" }`. |
 | `docs_url` | no | Link `https` a tu documentación. |
+| `icon` | no | `{ "path": "<path SVG de 24x24>", "color": "#RRGGBB" }`. Logo de tu tarjeta en el Marketplace. |
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Solo las herramientas listadas llegan al agente. |
 | `suggestions` | no | Hasta tres primeras preguntas que se muestran en un chat vacío cuando un operador ya puede usar el plugin. |
 | `listed` | no | Lo define Macch. Por defecto `true`. |

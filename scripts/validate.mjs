@@ -49,6 +49,12 @@ function describeSchemaError(error) {
       if (/^suggestions\.\d+\.id$/.test(field)) {
         return `${field}: use lowercase letters and digits joined by single hyphens, like "find-invoice"`;
       }
+      if (field === "icon.path") {
+        return "icon.path: use SVG path data for a 24x24 viewBox, starting with M";
+      }
+      if (field === "icon.color") {
+        return 'icon.color: use a hex color like "#00B1EA"';
+      }
       if (field === "server_url" || field === "docs_url") {
         return `${field}: must be an https URL`;
       }
