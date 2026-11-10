@@ -1,0 +1,32 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "macch-demo",
+  "name": "Macch Demo",
+  "summary": {
+    "en-US": "See a sample budget in an interactive chart, to test plugin widgets.",
+    "es-AR": "Mirá un presupuesto de ejemplo en un gráfico interactivo, para probar widgets de plugins.",
+    "pt-BR": "Veja um orçamento de exemplo em um gráfico interativo, para testar widgets de plugins."
+  },
+  "publisher": "Macch",
+  "server_url": "https://demo-mcp.macch.ai/mcp",
+  "connection": "company",
+  "auth": "none",
+  "listed": true,
+  "staff_only": true,
+  "tools": {
+    "get-budget-data": {
+      "read_only": true
+    }
+  },
+  "suggestions": [
+    {
+      "id": "sample-budget",
+      "icon": "chart-line",
+      "text": {
+        "en-US": "Show me the sample budget",
+        "es-AR": "Mostrame el presupuesto de ejemplo",
+        "pt-BR": "Mostre o orçamento de exemplo"
+      }
+    }
+  ]
+}

@@ -108,6 +108,11 @@
       "type": "boolean",
       "default": true
     },
+    "staff_only": {
+      "description": "Whether only Macch staff see the plugin in the Marketplace, for Macch's own test plugins. Macch sets it.",
+      "type": "boolean",
+      "default": false
+    },
     "review": {
       "description": "Review number. Macch raises it when it re-reviews a tool whose read_only flag did not change.",
       "type": "integer",

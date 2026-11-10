@@ -43,6 +43,7 @@ Para usar un servidor solo dentro de tu empresa, un administrador pega su URL MC
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Solo las herramientas listadas llegan al agente. |
 | `suggestions` | no | Hasta tres primeras preguntas que se muestran en un chat vacío cuando un operador ya puede usar el plugin. |
 | `listed` | no | Lo define Macch. Por defecto `true`. |
+| `staff_only` | no | Lo define Macch para sus plugins de prueba: solo lo ve el equipo de Macch. Por defecto `false`. |
 | `review` | no | Lo define Macch. Por defecto `1`. |
 
 Reglas completas: [`AGENTS.md`](AGENTS.md#the-manifest) (en inglés). JSON Schema: [`schema/plugin.schema.json`](schema/plugin.schema.json). Ejemplos: [`plugins/`](plugins/).

@@ -59,6 +59,7 @@ test("optional fields are accepted", () => {
     oauth: { scopes: "contacts.read contacts.write" },
     docs_url: "https://docs.acme.example/mcp",
     listed: false,
+    staff_only: true,
     review: 2,
   });
   assert.deepEqual(validateManifest(manifest, "acme-crm.json").errors, []);
@@ -129,6 +130,10 @@ test("review must be a positive integer", () => {
 
 test("listed must be a boolean", () => {
   assertRejected(validManifest({ listed: "yes" }), "listed: must be boolean");
+});
+
+test("staff_only must be a boolean", () => {
+  assertRejected(validManifest({ staff_only: "yes" }), "staff_only: must be boolean");
 });
 
 test("every tool needs a boolean read_only and nothing else", () => {
