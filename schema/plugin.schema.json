@@ -161,14 +161,32 @@
           "icon": {
             "description": "Icon Macch Admin shows next to the question. The list matches the icons Macch Admin ships; Macch adds names here when it adds icons.",
             "enum": [
+              "bell",
+              "calendar-days",
               "chart-line",
+              "circle-check",
               "clipboard-list",
+              "clock",
+              "credit-card",
+              "file-text",
+              "gauge",
               "lightbulb",
+              "mail",
+              "map-pin",
               "message-circle-more",
+              "message-square-text",
+              "phone",
               "plug-zap",
+              "router",
+              "search",
               "send",
+              "settings",
+              "shield-check",
               "sparkles",
-              "wallet"
+              "trending-up",
+              "users",
+              "wallet",
+              "wifi"
             ]
           },
           "text": {
