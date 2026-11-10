@@ -75,7 +75,7 @@ Optional fields:
   - Every other listed tool asks the operator before each run.
 - `suggestions`: up to three first questions the agent offers in an empty chat once an operator can use the plugin, so operators discover what it does. Each has:
   - `id`: lowercase words joined by hyphens, unique within the manifest.
-  - `icon`: `clipboard-list`, `lightbulb`, `message-circle-more`, `plug-zap`, `send`, `sparkles`, or `wallet`.
+  - `icon`: one of the names in the `icon` enum of `schema/plugin.schema.json`, such as `sparkles` or `chart-line`.
   - `text`: the question keyed by locale. `en-US` is required; add `es-AR` and `pt-BR`. Write what an operator would type, under about 30 characters, with no sample customer data.
 - `listed`: boolean, default `true`. Macch sets `false` to hide a plugin. Do not set it.
 - `review`: positive integer, default `1`. Macch raises it when it re-reviews a tool whose `read_only` flag did not change. Do not set it.
