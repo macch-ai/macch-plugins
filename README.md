@@ -40,6 +40,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | `auth` | yes | `oauth`, `api_key`, or `none`. |
 | `oauth` | no | `{ "scopes": "space separated scopes" }`. |
 | `docs_url` | no | `https` link to your docs. |
+| `icon` | no | `{ "path": "<24x24 SVG path>", "color": "#RRGGBB" }`. Brand mark on your Marketplace card. |
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Only listed tools reach the agent. |
 | `suggestions` | no | Up to three first questions shown in an empty chat once an operator can use the plugin. |
 | `listed` | no | Set by Macch. Default `true`. |

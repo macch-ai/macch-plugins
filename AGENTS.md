@@ -69,6 +69,9 @@ Optional fields:
 
 - `oauth`: `{ "scopes": "space separated scopes" }`. Request only the scopes the tools need.
 - `docs_url`: `https` link to your documentation.
+- `icon`: your brand mark on the plugin's Marketplace card. Without it, the card shows the first letter of `name`.
+  - `path`: the `d` attribute of one SVG `<path>` drawn on a `0 0 24 24` viewBox, at most 8,000 characters. Path commands and numbers only: no `<svg>` markup, images, or URLs. [Simple Icons](https://simpleicons.org) publishes marks in this exact shape for many brands.
+  - `color`: optional brand color as `#RRGGBB`. Omit it for a black mark, so the icon follows the light or dark theme.
 - `tools`: maps each MCP tool name to `{ "read_only": boolean }`.
   - Only tools listed here are ever shown to the agent. A tool your server exposes but the manifest omits stays hidden.
   - `read_only: true` lets the agent run the tool without asking the operator. Macch verifies the claim in review.

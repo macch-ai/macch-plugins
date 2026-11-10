@@ -151,7 +151,7 @@ test("oauth only takes scopes as a string", () => {
 });
 
 test("unknown top-level fields are refused", () => {
-  assertRejected(validManifest({ icon: "https://acme.example/icon.png" }), 'unknown field "icon"');
+  assertRejected(validManifest({ homepage: "https://acme.example" }), 'unknown field "homepage"');
 });
 
 test("a manifest that is not an object is refused", () => {
@@ -233,4 +233,16 @@ test("a suggestion missing es-AR or pt-BR is a warning, not an error", () => {
   const { errors, warnings } = validateManifest(manifest, "acme-crm.json");
   assert.deepEqual(errors, []);
   assert.equal(warnings.length, 2);
+});
+
+test("an icon is one 24x24 SVG path with an optional hex color", () => {
+  const icon = { path: "M0 0h24v24H0z", color: "#00B1EA" };
+  assert.deepEqual(validateManifest(validManifest({ icon }), "acme-crm.json"), { errors: [], warnings: [] });
+  assert.deepEqual(validateManifest(validManifest({ icon: { path: icon.path } }), "acme-crm.json").errors, []);
+  assertRejected(validManifest({ icon: "M0 0h24v24H0z" }), "icon");
+  assertRejected(validManifest({ icon: { color: "#000000" } }), "icon");
+  assertRejected(validManifest({ icon: { path: "<svg onload=alert(1)>" } }), "icon.path: use SVG path data");
+  assertRejected(validManifest({ icon: { path: `M${" 1".repeat(5000)}` } }), "icon.path");
+  assertRejected(validManifest({ icon: { path: icon.path, color: "blue" } }), "icon.color");
+  assertRejected(validManifest({ icon: { path: icon.path, href: "https://acme.example/logo.svg" } }), "icon");
 });
