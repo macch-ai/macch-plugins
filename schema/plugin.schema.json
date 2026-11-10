@@ -154,8 +154,9 @@
             "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
           },
           "icon": {
-            "description": "Icon Macch Admin shows next to the question.",
+            "description": "Icon Macch Admin shows next to the question. The list matches the icons Macch Admin ships; Macch adds names here when it adds icons.",
             "enum": [
+              "chart-line",
               "clipboard-list",
               "lightbulb",
               "message-circle-more",
