@@ -1,3 +1,5 @@
+[Leer en español](README.es.md)
+
 # Macch Plugins
 
 The public catalog of third-party plugins for the Macch agent, the AI agent ISP operators chat with inside Macch Admin. A plugin is a remote [MCP](https://modelcontextprotocol.io) server (Streamable HTTP) that gives the agent new tools: look up a payment, read a document, open an order in your system. Each plugin is one manifest file in [`plugins/`](plugins/). Macch reviews every tool before a plugin appears in the Marketplace inside Macch Admin.
