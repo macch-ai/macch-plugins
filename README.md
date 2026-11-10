@@ -43,6 +43,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Only listed tools reach the agent. |
 | `suggestions` | no | Up to three first questions shown in an empty chat once an operator can use the plugin. |
 | `listed` | no | Set by Macch. Default `true`. |
+| `staff_only` | no | Set by Macch for its own test plugins: only Macch staff see them. Default `false`. |
 | `review` | no | Set by Macch. Default `1`. |
 
 Full rules: [`AGENTS.md`](AGENTS.md#the-manifest). JSON Schema: [`schema/plugin.schema.json`](schema/plugin.schema.json). Examples: [`plugins/`](plugins/).

@@ -78,6 +78,7 @@ Optional fields:
   - `icon`: one of the names in the `icon` enum of `schema/plugin.schema.json`, such as `sparkles` or `chart-line`.
   - `text`: the question keyed by locale. `en-US` is required; add `es-AR` and `pt-BR`. Write what an operator would type, under about 30 characters, with no sample customer data.
 - `listed`: boolean, default `true`. Macch sets `false` to hide a plugin. Do not set it.
+- `staff_only`: boolean, default `false`. Macch sets `true` on its own test plugins so only Macch staff see them in the Marketplace. Do not set it.
 - `review`: positive integer, default `1`. Macch raises it when it re-reviews a tool whose `read_only` flag did not change. Do not set it.
 
 No other top-level keys are allowed besides `$schema`.
@@ -133,5 +134,5 @@ No other top-level keys are allowed besides `$schema`.
 - Add or change exactly one file: `plugins/<slug>.json`. Server code lives in your own repo.
 - Fill in [`.github/PULL_REQUEST_TEMPLATE.md`](.github/PULL_REQUEST_TEMPLATE.md). For each tool, give one line on what it does and why its `read_only` value is right.
 - Explain how Macch can test the plugin, such as a sandbox account. Never put credentials in the PR. Macch will contact you for them.
-- Leave `listed` and `review` unset.
+- Leave `listed`, `staff_only`, and `review` unset.
 - To change a listed plugin, open a PR that describes what changed on the server and why.
