@@ -19,8 +19,117 @@
     "scopes": "ads_mcp_management ads_read"
   },
   "docs_url": "https://developers.facebook.com/documentation/mcp",
-  "listed": false,
-  "tools": {},
+  "listed": true,
+  "tools": {
+    "ads_get_ad_accounts": {
+      "read_only": true
+    },
+    "ads_get_ad_entities": {
+      "read_only": true
+    },
+    "ads_get_errors": {
+      "read_only": true
+    },
+    "ads_account_get_activity_logs": {
+      "read_only": true
+    },
+    "ads_get_creatives": {
+      "read_only": true
+    },
+    "ads_get_creative_ads": {
+      "read_only": true
+    },
+    "ads_get_ad_images": {
+      "read_only": true
+    },
+    "ads_get_ad_videos": {
+      "read_only": true
+    },
+    "ads_get_ad_preview": {
+      "read_only": true
+    },
+    "ads_get_ad_account_pages": {
+      "read_only": true
+    },
+    "ads_get_user_pages": {
+      "read_only": true
+    },
+    "ads_get_ig_accounts": {
+      "read_only": true
+    },
+    "ads_get_ig_media": {
+      "read_only": true
+    },
+    "ads_get_ad_account_custom_audiences": {
+      "read_only": true
+    },
+    "ads_get_custom_audience": {
+      "read_only": true
+    },
+    "ads_get_field_context": {
+      "read_only": true
+    },
+    "ads_get_help_article": {
+      "read_only": true
+    },
+    "ads_get_opportunity_score": {
+      "read_only": true
+    },
+    "ads_get_async_result": {
+      "read_only": false
+    },
+    "ads_insights_advertiser_context": {
+      "read_only": true
+    },
+    "ads_insights_anomaly_signal": {
+      "read_only": true
+    },
+    "ads_insights_auction_ranking_benchmarks": {
+      "read_only": true
+    },
+    "ads_insights_industry_benchmark": {
+      "read_only": true
+    },
+    "ads_insights_performance_trend": {
+      "read_only": true
+    },
+    "ads_insights_performance_vs_peers": {
+      "read_only": true
+    },
+    "ads_library_search": {
+      "read_only": true
+    },
+    "ads_create_campaign": {
+      "read_only": false
+    },
+    "ads_create_ad_set": {
+      "read_only": false
+    },
+    "ads_create_ad": {
+      "read_only": false
+    },
+    "ads_create_creative": {
+      "read_only": false
+    },
+    "ads_create_upload_url": {
+      "read_only": false
+    },
+    "ads_finalize_upload": {
+      "read_only": false
+    },
+    "ads_creative_upload_media": {
+      "read_only": false
+    },
+    "ads_update_entity": {
+      "read_only": false
+    },
+    "ads_activate_entity": {
+      "read_only": false
+    },
+    "ads_boost_ig_post": {
+      "read_only": false
+    }
+  },
   "suggestions": [
     {
       "id": "campaign-results",
