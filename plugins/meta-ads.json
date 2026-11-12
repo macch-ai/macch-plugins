@@ -20,7 +20,6 @@
   },
   "docs_url": "https://developers.facebook.com/documentation/mcp",
   "listed": true,
-  "staff_only": true,
   "tools": {
     "ads_get_ad_accounts": {
       "read_only": true
