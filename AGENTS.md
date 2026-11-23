@@ -79,7 +79,7 @@ Optional fields:
 - `suggestions`: up to three first questions the agent offers in an empty chat once an operator can use the plugin, so operators discover what it does. Each has:
   - `id`: lowercase words joined by hyphens, unique within the manifest.
   - `icon`: one of the names in the `icon` enum of `schema/plugin.schema.json`, such as `sparkles` or `chart-line`.
-  - `text`: the question keyed by locale. `en-US` is required; add `es-AR` and `pt-BR`. Write what an operator would type, under about 30 characters, with no sample customer data.
+  - `text`: the question keyed by locale. `en-US` is required; add `es-AR` and `pt-BR`. Clicking a suggestion sends it as the operator's first message, so write a complete request in the operator's words that names the action, what it acts on, and the product: "Update the knowledge base from a Google Sheet", not "Update prices from Sheets". The agent must be able to start from it alone, asking at most for a missing link or name. Spell out terms ("knowledge base", not "the base" or "KB"); keep it to one line, up to about 50 characters, clarity before brevity; no sample customer data.
 - `listed`: boolean, default `true`. Macch sets `false` to hide a plugin. Do not set it.
 - `staff_only`: boolean, default `false`. Macch sets `true` on its own test plugins so only Macch staff see them in the Marketplace. Do not set it.
 - `review`: positive integer, default `1`. Macch raises it when it re-reviews a tool whose `read_only` flag did not change. Do not set it.

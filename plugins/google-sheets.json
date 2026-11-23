@@ -32,30 +32,30 @@
   },
   "suggestions": [
     {
-      "id": "update-prices",
+      "id": "update-knowledge-base",
       "icon": "wallet",
       "text": {
-        "en-US": "Update prices from Sheets",
-        "es-AR": "Actualizá precios desde Sheets",
-        "pt-BR": "Atualize preços do Sheets"
+        "en-US": "Update the knowledge base from a Google Sheet",
+        "es-AR": "Actualizá la base de conocimiento con una planilla",
+        "pt-BR": "Atualize a base de conhecimento com uma planilha"
       }
     },
     {
       "id": "compare-plans",
       "icon": "search",
       "text": {
-        "en-US": "Compare Sheets with the KB",
-        "es-AR": "Compará Sheets con la base",
-        "pt-BR": "Compare o Sheets com a base"
+        "en-US": "Compare your plans with a Google Sheet",
+        "es-AR": "Compará tus planes con una planilla de Google",
+        "pt-BR": "Compare seus planos com uma planilha do Google"
       }
     },
     {
       "id": "summarize-sheet",
       "icon": "file-text",
       "text": {
-        "en-US": "Summarize a spreadsheet",
-        "es-AR": "Resumí una planilla",
-        "pt-BR": "Resuma uma planilha"
+        "en-US": "Summarize a Google Sheets spreadsheet",
+        "es-AR": "Resumí una planilla de Google Sheets",
+        "pt-BR": "Resuma uma planilha do Google Sheets"
       }
     }
   ]
