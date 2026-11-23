@@ -3,9 +3,9 @@
   "slug": "google-sheets",
   "name": "Google Sheets",
   "summary": {
-    "en-US": "Read the Google Sheets you can open, private ones included.",
-    "es-AR": "Leé las hojas de Google Sheets que podés abrir, incluso las privadas.",
-    "pt-BR": "Leia as planilhas do Google Sheets que você pode abrir, inclusive as privadas."
+    "en-US": "Read your Google Sheets spreadsheets and use their data in Atlas, like price lists, plans, or inventory.",
+    "es-AR": "Leé tus planillas de Google Sheets y usá sus datos en Atlas, como listas de precios, planes o inventario.",
+    "pt-BR": "Leia suas planilhas do Google Sheets e use os dados no Atlas, como listas de preços, planos ou estoque."
   },
   "publisher": "Macch",
   "icon": {
@@ -32,21 +32,30 @@
   },
   "suggestions": [
     {
-      "id": "read-sheet",
-      "icon": "file-text",
-      "text": {
-        "en-US": "Read a Google Sheet",
-        "es-AR": "Leé una hoja de Google",
-        "pt-BR": "Leia uma planilha do Google"
-      }
-    },
-    {
       "id": "update-prices",
       "icon": "wallet",
       "text": {
-        "en-US": "Update prices from a sheet",
-        "es-AR": "Actualizá precios con una hoja",
-        "pt-BR": "Atualize preços com uma planilha"
+        "en-US": "Update prices from Sheets",
+        "es-AR": "Actualizá precios desde Sheets",
+        "pt-BR": "Atualize preços do Sheets"
+      }
+    },
+    {
+      "id": "compare-plans",
+      "icon": "search",
+      "text": {
+        "en-US": "Compare Sheets with the KB",
+        "es-AR": "Compará Sheets con la base",
+        "pt-BR": "Compare o Sheets com a base"
+      }
+    },
+    {
+      "id": "summarize-sheet",
+      "icon": "file-text",
+      "text": {
+        "en-US": "Summarize a spreadsheet",
+        "es-AR": "Resumí una planilla",
+        "pt-BR": "Resuma uma planilha"
       }
     }
   ]
