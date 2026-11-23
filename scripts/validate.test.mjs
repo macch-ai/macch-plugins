@@ -246,3 +246,13 @@ test("an icon is one 24x24 SVG path with an optional hex color", () => {
   assertRejected(validManifest({ icon: { path: icon.path, color: "blue" } }), "icon.color");
   assertRejected(validManifest({ icon: { path: icon.path, href: "https://acme.example/logo.svg" } }), "icon");
 });
+
+test("authorization_params add provider sign-in parameters but never the ones Macch sets", () => {
+  const oauth = { scopes: "read", authorization_params: { access_type: "offline", prompt: "consent" } };
+  assert.deepEqual(validateManifest(validManifest({ oauth }), "acme-crm.json").errors, []);
+  assertRejected(validManifest({ oauth: { authorization_params: { access_type: 1 } } }), "authorization_params");
+  assertRejected(
+    validManifest({ oauth: { authorization_params: { redirect_uri: "https://evil.example" } } }),
+    "authorization_params",
+  );
+});

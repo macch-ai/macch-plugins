@@ -38,7 +38,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | `server_url` | yes | `https` URL of the Streamable HTTP MCP endpoint. |
 | `connection` | yes | `operator` (each operator signs in) or `company` (one shared account). |
 | `auth` | yes | `oauth`, `api_key`, or `none`. |
-| `oauth` | no | `{ "scopes": "space separated scopes" }`. |
+| `oauth` | no | `{ "scopes": "space separated scopes", "authorization_params": { "access_type": "offline" } }`. |
 | `docs_url` | no | `https` link to your docs. |
 | `icon` | no | `{ "path": "<24x24 SVG path>", "color": "#RRGGBB" }`. Brand mark on your Marketplace card. |
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Only listed tools reach the agent. |
