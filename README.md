@@ -33,7 +33,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | --- | --- | --- |
 | `slug` | yes | Lowercase words joined by hyphens, max 40 chars, equal to the file name. |
 | `name` | yes | Display name. |
-| `summary` | yes | One short sentence per locale. `en-US` required; add `es-AR` and `pt-BR`. |
+| `summary` | yes | One short sentence per locale, at most 80 characters. `en-US` required; add `es-AR` and `pt-BR`. |
 | `publisher` | yes | Who runs the server. |
 | `server_url` | yes | `https` URL of the Streamable HTTP MCP endpoint. |
 | `connection` | yes | `operator` (each operator signs in) or `company` (one shared account). |
