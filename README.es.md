@@ -33,7 +33,7 @@ Para usar un servidor solo dentro de tu empresa, un administrador pega su URL MC
 | --- | --- | --- |
 | `slug` | sí | Palabras en minúscula unidas por guiones, máximo 40 caracteres, igual al nombre del archivo. |
 | `name` | sí | Nombre visible. |
-| `summary` | sí | Una oración corta por locale. `en-US` es obligatorio; agregá `es-AR` y `pt-BR`. |
+| `summary` | sí | Una oración corta por locale, de 80 caracteres como máximo. `en-US` es obligatorio; agregá `es-AR` y `pt-BR`. |
 | `publisher` | sí | Quién opera el servidor. |
 | `server_url` | sí | URL `https` del endpoint MCP Streamable HTTP. |
 | `connection` | sí | `operator` (cada operador inicia sesión) o `company` (una cuenta compartida). |

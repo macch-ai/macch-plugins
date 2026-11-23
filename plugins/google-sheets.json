@@ -3,9 +3,9 @@
   "slug": "google-sheets",
   "name": "Google Sheets",
   "summary": {
-    "en-US": "Read your Google Sheets spreadsheets and use their data in Atlas, like price lists, plans, or inventory.",
-    "es-AR": "Leé tus planillas de Google Sheets y usá sus datos en Atlas, como listas de precios, planes o inventario.",
-    "pt-BR": "Leia suas planilhas do Google Sheets e use os dados no Atlas, como listas de preços, planos ou estoque."
+    "en-US": "Read your Google Sheets spreadsheets, like price lists, plans, or inventory.",
+    "es-AR": "Leé tus planillas de Google Sheets, como listas de precios, planes o inventario.",
+    "pt-BR": "Leia suas planilhas do Google Sheets, como listas de preços, planos ou estoque."
   },
   "publisher": "Macch",
   "icon": {
