@@ -94,6 +94,27 @@
         "scopes": {
           "description": "Space-separated scopes to request.",
           "type": "string"
+        },
+        "authorization_params": {
+          "description": "Extra query parameters the provider needs on its sign-in page, such as Google's access_type=offline, which is how Google issues a refresh token. Macch refuses names it sets itself (response_type, client_id, redirect_uri, code_challenge, code_challenge_method, state, resource, scope).",
+          "type": "object",
+          "propertyNames": {
+            "not": {
+              "enum": [
+                "response_type",
+                "client_id",
+                "redirect_uri",
+                "code_challenge",
+                "code_challenge_method",
+                "state",
+                "resource",
+                "scope"
+              ]
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
         }
       }
     },

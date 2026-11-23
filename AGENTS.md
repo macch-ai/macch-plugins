@@ -67,7 +67,7 @@ Required fields:
 
 Optional fields:
 
-- `oauth`: `{ "scopes": "space separated scopes" }`. Request only the scopes the tools need.
+- `oauth`: `{ "scopes": "space separated scopes", "authorization_params": { "name": "value" } }`. Request only the scopes the tools need. `authorization_params` adds query parameters your provider needs on its sign-in page, such as Google's `access_type: offline` and `prompt: consent`, without which Google never issues a refresh token. Macch refuses names it sets itself (`response_type`, `client_id`, `redirect_uri`, `code_challenge`, `code_challenge_method`, `state`, `resource`, `scope`).
 - `docs_url`: `https` link to your documentation.
 - `icon`: your brand mark on the plugin's Marketplace card. Without it, the card shows the first letter of `name`.
   - `path`: the `d` attribute of one SVG `<path>` drawn on a `0 0 24 24` viewBox, at most 8,000 characters. Path commands and numbers only: no `<svg>` markup, images, or URLs. [Simple Icons](https://simpleicons.org) publishes marks in this exact shape for many brands.

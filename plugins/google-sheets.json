@@ -1,0 +1,53 @@
+{
+  "$schema": "https://raw.githubusercontent.com/macch-ai/macch-plugins/main/schema/plugin.schema.json",
+  "slug": "google-sheets",
+  "name": "Google Sheets",
+  "summary": {
+    "en-US": "Read the Google Sheets you can open, private ones included.",
+    "es-AR": "Leé las hojas de Google Sheets que podés abrir, incluso las privadas.",
+    "pt-BR": "Leia as planilhas do Google Sheets que você pode abrir, inclusive as privadas."
+  },
+  "publisher": "Macch",
+  "icon": {
+    "path": "M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z",
+    "color": "#34A853"
+  },
+  "server_url": "https://google-sheets-mcp.macch.ai/mcp",
+  "connection": "operator",
+  "auth": "oauth",
+  "oauth": {
+    "scopes": "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "authorization_params": {
+      "access_type": "offline",
+      "prompt": "consent"
+    }
+  },
+  "docs_url": "https://developers.google.com/workspace/sheets/api/reference/rest",
+  "listed": true,
+  "staff_only": true,
+  "tools": {
+    "read-google-sheet": {
+      "read_only": true
+    }
+  },
+  "suggestions": [
+    {
+      "id": "read-sheet",
+      "icon": "file-text",
+      "text": {
+        "en-US": "Read a Google Sheet",
+        "es-AR": "Leé una hoja de Google",
+        "pt-BR": "Leia uma planilha do Google"
+      }
+    },
+    {
+      "id": "update-prices",
+      "icon": "wallet",
+      "text": {
+        "en-US": "Update prices from a sheet",
+        "es-AR": "Actualizá precios con una hoja",
+        "pt-BR": "Atualize preços com uma planilha"
+      }
+    }
+  ]
+}

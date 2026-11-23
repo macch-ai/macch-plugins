@@ -38,7 +38,7 @@ Para usar un servidor solo dentro de tu empresa, un administrador pega su URL MC
 | `server_url` | sí | URL `https` del endpoint MCP Streamable HTTP. |
 | `connection` | sí | `operator` (cada operador inicia sesión) o `company` (una cuenta compartida). |
 | `auth` | sí | `oauth`, `api_key` o `none`. |
-| `oauth` | no | `{ "scopes": "space separated scopes" }`. |
+| `oauth` | no | `{ "scopes": "space separated scopes", "authorization_params": { "access_type": "offline" } }`. |
 | `docs_url` | no | Link `https` a tu documentación. |
 | `icon` | no | `{ "path": "<path SVG de 24x24>", "color": "#RRGGBB" }`. Logo de tu tarjeta en el Marketplace. |
 | `tools` | no | `{ "<tool name>": { "read_only": true } }`. Solo las herramientas listadas llegan al agente. |
