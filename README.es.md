@@ -41,7 +41,7 @@ Para usar un servidor solo dentro de tu empresa, un administrador pega su URL MC
 | `oauth` | no | `{ "scopes": "space separated scopes", "authorization_params": { "access_type": "offline" } }`. |
 | `docs_url` | no | Link `https` a tu documentación. |
 | `icon` | no | `{ "path": "<path SVG de 24x24>", "color": "#RRGGBB" }`. Logo de tu tarjeta en el Marketplace. |
-| `tools` | no | `{ "<tool name>": { "read_only": true } }`. Solo las herramientas listadas llegan al agente. |
+| `tools` | no | `{ "<tool name>": { "read_only": true, "title": { "en-US": "Read a sheet" } } }`. Solo las herramientas listadas llegan al agente. `title` es opcional: lo que el operador lee en la tarjeta de la herramienta. |
 | `suggestions` | no | Hasta tres primeras preguntas que se muestran en un chat vacío cuando un operador ya puede usar el plugin. |
 | `listed` | no | Lo define Macch. Por defecto `true`. |
 | `staff_only` | no | Lo define Macch para sus plugins de prueba: solo lo ve el equipo de Macch. Por defecto `false`. |
