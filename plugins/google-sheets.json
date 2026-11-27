@@ -16,7 +16,7 @@
   "connection": "operator",
   "auth": "oauth",
   "oauth": {
-    "scopes": "https://www.googleapis.com/auth/spreadsheets.readonly",
+    "scopes": "https://www.googleapis.com/auth/drive.file",
     "authorization_params": {
       "access_type": "offline",
       "prompt": "consent"
