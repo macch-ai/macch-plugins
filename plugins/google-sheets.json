@@ -27,7 +27,12 @@
   "staff_only": true,
   "tools": {
     "read-google-sheet": {
-      "read_only": true
+      "read_only": true,
+      "title": {
+        "en-US": "Read a Google Sheet",
+        "es-AR": "Leer una planilla de Google",
+        "pt-BR": "Ler uma planilha do Google"
+      }
     }
   },
   "suggestions": [
