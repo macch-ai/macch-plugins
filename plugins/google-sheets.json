@@ -32,6 +32,16 @@
         "en-US": "Read a Google Sheet",
         "es-AR": "Leer una planilla de Google",
         "pt-BR": "Ler uma planilha do Google"
+      },
+      "doing": {
+        "en-US": "Reading a Google Sheet",
+        "es-AR": "Leyendo una planilla de Google",
+        "pt-BR": "Lendo uma planilha do Google"
+      },
+      "did": {
+        "en-US": "Read a Google Sheet",
+        "es-AR": "Leí una planilla de Google",
+        "pt-BR": "Li uma planilha do Google"
       }
     }
   },

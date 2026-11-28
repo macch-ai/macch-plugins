@@ -76,6 +76,7 @@ Optional fields:
   - Only tools listed here are ever shown to the agent. A tool your server exposes but the manifest omits stays hidden.
   - `read_only: true` lets the agent run the tool without asking the operator. Macch verifies the claim in review.
   - Every other listed tool asks the operator before each run.
+  - Name each tool for operators with three optional texts per locale (`en-US` required in each, `es-AR` and `pt-BR` strongly recommended): `title` is the action the agent asks to approve ("Read a Google Sheet"), `doing` is the agent speaking while the tool runs ("Reading a Google Sheet", "Leyendo una planilla de Google"), and `did` is the agent speaking once it ended, in the first person where the language marks it ("Read a Google Sheet", "Leí una planilla de Google"). `doing` and `did` come together and need `title`. Without them the chat shows the title; without a title it shows only the plugin's name.
 - `suggestions`: up to three first questions the agent offers in an empty chat once an operator can use the plugin, so operators discover what it does. Each has:
   - `id`: lowercase words joined by hyphens, unique within the manifest.
   - `icon`: one of the names in the `icon` enum of `schema/plugin.schema.json`, such as `sparkles` or `chart-line`.

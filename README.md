@@ -41,7 +41,7 @@ To use a server only inside your own company, an admin pastes its MCP URL in Mac
 | `oauth` | no | `{ "scopes": "space separated scopes", "authorization_params": { "access_type": "offline" } }`. |
 | `docs_url` | no | `https` link to your docs. |
 | `icon` | no | `{ "path": "<24x24 SVG path>", "color": "#RRGGBB" }`. Brand mark on your Marketplace card. |
-| `tools` | no | `{ "<tool name>": { "read_only": true, "title": { "en-US": "Read a sheet" } } }`. Only listed tools reach the agent. `title` is optional: what operators read on the tool's card. |
+| `tools` | no | `{ "<tool name>": { "read_only": true, "title": { "en-US": "Read a sheet" } } }`. Only listed tools reach the agent. `title` is optional: the action operators read when the agent asks to approve it. Add `doing` and `did` (same shape, both or neither) for what the agent is doing and did: `"doing": { "en-US": "Reading a sheet" }, "did": { "en-US": "Read a sheet" }`. |
 | `suggestions` | no | Up to three first questions shown in an empty chat once an operator can use the plugin. |
 | `listed` | no | Set by Macch. Default `true`. |
 | `staff_only` | no | Set by Macch for its own test plugins: only Macch staff see them. Default `false`. |

@@ -176,7 +176,47 @@
             "type": "boolean"
           },
           "title": {
-            "description": "What the tool does, per locale, as operators read it on the tool's card in the chat (\"Read a Google Sheet\"). en-US is required; es-AR and pt-BR are strongly recommended. Without it, the card shows the plugin's name and the tool name.",
+            "description": "The action the tool performs, per locale, as operators read it when the agent asks to approve it (\"Read a Google Sheet\"). en-US is required; es-AR and pt-BR are strongly recommended. Without it, the chat shows the plugin's name.",
+            "type": "object",
+            "required": [
+              "en-US"
+            ],
+            "properties": {
+              "en-US": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "propertyNames": {
+              "pattern": "^[a-z]{2}-[A-Z]{2}$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "doing": {
+            "description": "What the agent is doing while the tool runs, per locale, as operators read it in the chat: the title's verb as a gerund (\"Reading a Google Sheet\", \"Leyendo una planilla de Google\"). Without it, the chat shows the title.",
+            "type": "object",
+            "required": [
+              "en-US"
+            ],
+            "properties": {
+              "en-US": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "propertyNames": {
+              "pattern": "^[a-z]{2}-[A-Z]{2}$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "did": {
+            "description": "What the agent did once the tool ended, per locale, as operators read it in the chat: the title in the past tense, in the first person where the language marks it (\"Read a Google Sheet\", \"Leí una planilla de Google\"). Without it, the chat shows the title.",
             "type": "object",
             "required": [
               "en-US"
@@ -195,6 +235,16 @@
               "minLength": 1
             }
           }
+        },
+        "dependentRequired": {
+          "doing": [
+            "title",
+            "did"
+          ],
+          "did": [
+            "title",
+            "doing"
+          ]
         }
       },
       "propertyNames": {

@@ -256,3 +256,14 @@ test("authorization_params add provider sign-in parameters but never the ones Ma
     "authorization_params",
   );
 });
+
+test("a tool says what the agent is doing and did, both or neither, beside its title", () => {
+  const title = { "en-US": "Search contacts" };
+  const doing = { "en-US": "Searching contacts" };
+  const did = { "en-US": "Searched contacts" };
+  const tool = (copy) => validManifest({ tools: { "search-contacts": { read_only: true, ...copy } } });
+  assert.deepEqual(validateManifest(tool({ title, doing, did }), "acme-crm.json").errors, []);
+  assertRejected(tool({ title, doing }), "did");
+  assertRejected(tool({ doing, did }), "title");
+  assertRejected(tool({ title, doing: { "es-AR": "Buscando contactos" }, did }), "en-US");
+});
